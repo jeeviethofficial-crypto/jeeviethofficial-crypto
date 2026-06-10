@@ -9,5 +9,4 @@ https://jeeviethofficial-crypto.github.io/pokemon-follower/
 
 <img src="https://jeeviethofficial-crypto.github.io/pokemon-follower/pokemon.gif" width="250">
 
----
-Computer Science Undergraduate | Software Developer | Tech Enthusiast
+--- | Software Developer | Tech Enthusiast
