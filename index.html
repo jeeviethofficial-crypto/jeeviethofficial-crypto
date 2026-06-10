@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jeeveith's Pokémon</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0d0d1a;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    cursor: none;
+    font-family: 'Press Start 2P', monospace;
+  }
+  canvas { display: block; }
+  #ui {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    color: #fff;
+    font-size: 7px;
+    line-height: 2;
+    text-shadow: 1px 1px 0 #000;
+    pointer-events: none;
+    z-index: 10;
+  }
+  #selector {
+    position: fixed;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+  }
+  .poke-btn {
+    background: #1a1a2e;
+    border: 2px solid #4a4a8a;
+    color: #aaa;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 6px;
+    padding: 6px 10px;
+    cursor: pointer;
+    transition: all 0.1s;
+  }
+  .poke-btn:hover, .poke-btn.active {
+    background: #e63946;
+    border-color: #ff6b6b;
+    color: #fff;
+  }
+  #credit {
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    color: rgba(255,255,255,0.3);
+    font-size: 6px;
+    text-align: right;
+  }
+</style>
+</head>
+<body>
+<div id="ui">
+  <div id="pokemon-name">PIKACHU</div>
+  <div id="step-counter">Steps: 0</div>
+  <div id="mood">Mood: Happy!</div>
+</div>
+<div id="credit">jeeviethofficial<br>github.com</div>
+<canvas id="c"></canvas>
+<div id="selector">
+  <button class="poke-btn active" onclick="selectPokemon(0)">PIKACHU</button>
+  <button class="poke-btn" onclick="selectPokemon(1)">CHARMANDER</button>
+  <button class="poke-btn" onclick="selectPokemon(2)">BULBASAUR</button>
+  <button class="poke-btn" onclick="selectPokemon(3)">SQUIRTLE</button>
+</div>
+<script>
+const canvas = document.getElementById('c');
+const ctx = canvas.getContext('2d');
+
+function resize() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener('resize', resize);
+
+const POKEMON = [
+  { name: 'PIKACHU',    color: '#FFD700', accent: '#FF8C00', size: 22, cheek: '#FF6B9D', tail: true,  type: 'pikachu'    },
+  { name: 'CHARMANDER', color: '#FF6B35', accent: '#FF4500', size: 24, cheek: null,      tail: false, type: 'charmander' },
+  { name: 'BULBASAUR',  color: '#78C850', accent: '#5A9E3A', size: 26, cheek: null,      tail: false, type: 'bulbasaur'  },
+  { name: 'SQUIRTLE',   color: '#6890F0', accent: '#4070D0', size: 24, cheek: null,      tail: false, type: 'squirtle'   },
+];
+
+let currentIdx = 0;
+let pokeX = window.innerWidth / 2;
+let pokeY = window.innerHeight / 2;
+let mouseX = window.innerWidth / 2;
+let mouseY = window.innerHeight / 2;
+let frame = 0;
+let steps = 0;
+let lastStepX = pokeX;
+let lastStepY = pokeY;
+let footprints = [];
+let particles = [];
+let walkFrame = 0;
+
+const stars = Array.from({ length: 80 }, () => ({
+  x: Math.random() * window.innerWidth,
+  y: Math.random() * window.innerHeight,
+  r: Math.random() * 1.5 + 0.3,
+  twinkle: Math.random() * Math.PI * 2
+}));
+
+const moods = ['Happy!', 'Curious~', 'Playful!', 'Sleepy...', 'Excited!'];
+
+canvas.addEventListener('mousemove', e => { mouseX = e.clientX; mouseY = e.clientY; });
+canvas.addEventListener('touchmove', e => {
+  e.preventDefault();
+  mouseX = e.touches[0].clientX;
+  mouseY = e.touches[0].clientY;
+}, { passive: false });
+canvas.addEventListener('click', spawnParticles);
+canvas.addEventListener('touchstart', e => {
+  mouseX = e.touches[0].clientX;
+  mouseY = e.touches[0].clientY;
+  spawnParticles(e.touches[0]);
+});
+
+function spawnParticles(e) {
+  const p = POKEMON[currentIdx];
+  for (let i = 0; i < 10; i++) {
+    particles.push({
+      x: e.clientX, y: e.clientY,
+      vx: (Math.random() - 0.5) * 5,
+      vy: (Math.random() - 2) * 3.5,
+      life: 1,
+      color: p.color
+    });
+  }
+}
+
+function selectPokemon(idx) {
+  currentIdx = idx;
+  document.querySelectorAll('.poke-btn').forEach((b, i) => b.classList.toggle('active', i === idx));
+  document.getElementById('pokemon-name').textContent = POKEMON[idx].name;
+}
+
+function drawBackground() {
+  ctx.fillStyle = '#0d0d1a';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  stars.forEach(s => {
+    s.twinkle += 0.018;
+    const alpha = 0.3 + Math.sin(s.twinkle) * 0.4;
+    ctx.beginPath();
+    ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(255,255,255,${alpha})`;
+    ctx.fill();
+  });
+}
+
+function drawFootprint(x, y, angle, alpha) {
+  ctx.save();
+  ctx.translate(x, y);
+  ctx.rotate(angle);
+  ctx.globalAlpha = alpha * 0.2;
+  ctx.fillStyle = '#ffffff';
+  ctx.beginPath(); ctx.ellipse(-5, 0, 5, 3, 0, 0, Math.PI * 2); ctx.fill();
+  ctx.beginPath(); ctx.ellipse(5, 0, 5, 3, 0, 0, Math.PI * 2); ctx.fill();
+  ctx.restore();
+}
+
+function drawPokemon(x, y, p, dir, bobY, wf) {
+  ctx.save();
+  ctx.translate(x, y + bobY);
+  if (dir < 0) ctx.scale(-1, 1);
+  const s = p.size;
+  const legOff = Math.sin(wf * 0.3) * 5;
+
+  // shadow
+  ctx.beginPath();
+  ctx.ellipse(0, s + 6, s * 0.9, 5, 0, 0, Math.PI * 2);
+  ctx.fillStyle = 'rgba(0,0,0,0.35)';
+  ctx.fill();
+
+  // pikachu tail
+  if (p.tail) {
+    ctx.save();
+    ctx.strokeStyle = p.accent;
+    ctx.lineWidth = 5;
+    ctx.lineCap = 'round';
+    ctx.beginPath();
+    ctx.moveTo(s * 0.5, 0);
+    ctx.quadraticCurveTo(s * 1.4, -s * 0.5, s * 1.2, -s * 1.2);
+    ctx.stroke();
+    ctx.strokeStyle = p.color;
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.moveTo(s * 0.5, 0);
+    ctx.quadraticCurveTo(s * 1.4, -s * 0.5, s * 1.2, -s * 1.2);
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  // charmander tail flame
+  if (p.type === 'charmander') {
+    ctx.save();
+    ctx.strokeStyle = '#FF6B35';
+    ctx.lineWidth = 4;
+    ctx.lineCap = 'round';
+    ctx.beginPath();
+    ctx.moveTo(s * 0.5, s * 0.3);
+    ctx.quadraticCurveTo(s * 1.2, s * 0.6, s * 1.0, s * 0.0);
+    ctx.stroke();
+    const flameY = Math.sin(frame * 0.2) * 3;
+    ctx.fillStyle = '#FFD700';
+    ctx.beginPath(); ctx.ellipse(s * 1.0, -s * 0.15 + flameY, 5, 8, 0.2, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = '#FF6B35';
+    ctx.beginPath(); ctx.ellipse(s * 1.0, -s * 0.05 + flameY, 3, 5, 0.2, 0, Math.PI * 2); ctx.fill();
+    ctx.restore();
+  }
+
+  // squirtle shell
+  if (p.type === 'squirtle') {
+    ctx.save();
+    ctx.fillStyle = '#8B6914';
+    ctx.beginPath(); ctx.ellipse(s * 0.3, 0, s * 0.5, s * 0.6, 0.3, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = '#A0522D';
+    ctx.beginPath(); ctx.ellipse(s * 0.3, 0, s * 0.35, s * 0.45, 0.3, 0, Math.PI * 2); ctx.fill();
+    ctx.restore();
+  }
+
+  // legs
+  ctx.fillStyle = p.color;
+  ctx.beginPath(); ctx.ellipse(-s * 0.35, s * 0.7 + legOff, s * 0.22, s * 0.35, 0, 0, Math.PI * 2); ctx.fill();
+  ctx.beginPath(); ctx.ellipse(s * 0.35, s * 0.7 - legOff, s * 0.22, s * 0.35, 0, 0, Math.PI * 2); ctx.fill();
+
+  // body
+  ctx.beginPath();
+  ctx.ellipse(0, 0, s * 0.8, s, 0, 0, Math.PI * 2);
+  ctx.fillStyle = p.color;
+  ctx.fill();
+  ctx.strokeStyle = p.accent;
+  ctx.lineWidth = 1.5;
+  ctx.stroke();
+
+  // belly
+  ctx.beginPath();
+  ctx.ellipse(0, s * 0.2, s * 0.45, s * 0.55, 0, 0, Math.PI * 2);
+  const bellyColor = p.type === 'pikachu' ? '#f5e6c8' : p.type === 'bulbasaur' ? '#a0d080' : '#dde';
+  ctx.fillStyle = bellyColor;
+  ctx.globalAlpha = 0.5;
+  ctx.fill();
+  ctx.globalAlpha = 1;
+
+  // head
+  ctx.beginPath();
+  ctx.arc(0, -s * 0.9, s * 0.72, 0, Math.PI * 2);
+  ctx.fillStyle = p.color;
+  ctx.fill();
+  ctx.strokeStyle = p.accent;
+  ctx.lineWidth = 1.5;
+  ctx.stroke();
+
+  // type-specific ears / features
+  if (p.type === 'pikachu') {
+    ctx.fillStyle = '#FFD700';
+    ctx.beginPath(); ctx.moveTo(-s*0.5,-s*1.5); ctx.lineTo(-s*0.3,-s*2.5); ctx.lineTo(-s*0.1,-s*1.5); ctx.closePath(); ctx.fill();
+    ctx.fillStyle = '#222';
+    ctx.beginPath(); ctx.moveTo(-s*0.42,-s*1.6); ctx.lineTo(-s*0.3,-s*2.3); ctx.lineTo(-s*0.18,-s*1.6); ctx.closePath(); ctx.fill();
+    ctx.fillStyle = '#FFD700';
+    ctx.beginPath(); ctx.moveTo(s*0.1,-s*1.5); ctx.lineTo(s*0.3,-s*2.5); ctx.lineTo(s*0.5,-s*1.5); ctx.closePath(); ctx.fill();
+    ctx.fillStyle = '#222';
+    ctx.beginPath(); ctx.moveTo(s*0.18,-s*1.6); ctx.lineTo(s*0.3,-s*2.3); ctx.lineTo(s*0.42,-s*1.6); ctx.closePath(); ctx.fill();
+  } else if (p.type === 'bulbasaur') {
+    ctx.fillStyle = p.color;
+    ctx.beginPath(); ctx.ellipse(-s*0.5,-s*1.45,s*0.22,s*0.35,-0.3,0,Math.PI*2); ctx.fill();
+    ctx.beginPath(); ctx.ellipse(s*0.5,-s*1.45,s*0.22,s*0.35,0.3,0,Math.PI*2); ctx.fill();
+    // bulb on back
+    ctx.fillStyle = '#4CAF50';
+    ctx.beginPath(); ctx.ellipse(s*0.4,-s*0.3,s*0.35,s*0.45,0.4,0,Math.PI*2); ctx.fill();
+    ctx.fillStyle = '#81C784';
+    ctx.beginPath(); ctx.ellipse(s*0.4,-s*0.3,s*0.2,s*0.25,0.4,0,Math.PI*2); ctx.fill();
+  } else {
+    ctx.fillStyle = p.color;
+    ctx.beginPath(); ctx.ellipse(-s*0.45,-s*1.45,s*0.2,s*0.3,-0.2,0,Math.PI*2); ctx.fill();
+    ctx.beginPath(); ctx.ellipse(s*0.45,-s*1.45,s*0.2,s*0.3,0.2,0,Math.PI*2); ctx.fill();
+  }
+
+  // cheeks
+  if (p.cheek) {
+    ctx.beginPath(); ctx.ellipse(-s*0.48,-s*0.8,s*0.2,s*0.14,0,0,Math.PI*2);
+    ctx.fillStyle = p.cheek; ctx.globalAlpha = 0.85; ctx.fill(); ctx.globalAlpha = 1;
+    ctx.beginPath(); ctx.ellipse(s*0.48,-s*0.8,s*0.2,s*0.14,0,0,Math.PI*2);
+    ctx.fillStyle = p.cheek; ctx.globalAlpha = 0.85; ctx.fill(); ctx.globalAlpha = 1;
+  }
+
+  // eyes
+  const eyeY = -s * 0.95;
+  ctx.fillStyle = '#111';
+  ctx.beginPath(); ctx.arc(-s*0.28, eyeY, s*0.13, 0, Math.PI*2); ctx.fill();
+  ctx.beginPath(); ctx.arc(s*0.28, eyeY, s*0.13, 0, Math.PI*2); ctx.fill();
+  ctx.fillStyle = '#fff';
+  ctx.beginPath(); ctx.arc(-s*0.24, eyeY-s*0.04, s*0.05, 0, Math.PI*2); ctx.fill();
+  ctx.beginPath(); ctx.arc(s*0.24, eyeY-s*0.04, s*0.05, 0, Math.PI*2); ctx.fill();
+
+  // nose & smile
+  ctx.fillStyle = '#111';
+  ctx.beginPath(); ctx.arc(0, -s*0.78, s*0.06, 0, Math.PI*2); ctx.fill();
+  ctx.beginPath();
+  ctx.arc(0, -s*0.65, s*0.25, 0.1, Math.PI-0.1);
+  ctx.strokeStyle = '#111'; ctx.lineWidth = 1.5; ctx.stroke();
+
+  ctx.restore();
+
+  // custom cursor
+  ctx.save();
+  ctx.translate(mouseX, mouseY);
+  ctx.strokeStyle = 'rgba(255,255,255,0.6)';
+  ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(-8,0); ctx.lineTo(8,0); ctx.moveTo(0,-8); ctx.lineTo(0,8); ctx.stroke();
+  ctx.restore();
+}
+
+function loop() {
+  frame++;
+  const p = POKEMON[currentIdx];
+  const dx = mouseX - pokeX;
+  const dy = mouseY - pokeY;
+  const dist = Math.sqrt(dx * dx + dy * dy);
+  const speed = dist > 5 ? Math.min(dist * 0.07, 7) : 0;
+
+  if (dist > 30) {
+    pokeX += (dx / dist) * speed;
+    pokeY += (dy / dist) * speed;
+    walkFrame++;
+    const stepDist = Math.sqrt((pokeX - lastStepX) ** 2 + (pokeY - lastStepY) ** 2);
+    if (stepDist > 28) {
+      footprints.push({ x: pokeX, y: pokeY, angle: Math.atan2(dy, dx), life: 1 });
+      lastStepX = pokeX;
+      lastStepY = pokeY;
+      steps++;
+      document.getElementById('step-counter').textContent = 'Steps: ' + steps;
+    }
+  }
+
+  if (frame % 200 === 0) {
+    document.getElementById('mood').textContent = 'Mood: ' + moods[Math.floor(Math.random() * moods.length)];
+  }
+
+  drawBackground();
+
+  footprints = footprints.filter(f => f.life > 0.02);
+  footprints.forEach(f => {
+    drawFootprint(f.x, f.y, f.angle, f.life);
+    f.life -= 0.0025;
+  });
+
+  particles = particles.filter(pt => pt.life > 0);
+  particles.forEach(pt => {
+    pt.x += pt.vx;
+    pt.y += pt.vy;
+    pt.vy += 0.1;
+    pt.life -= 0.028;
+    ctx.beginPath();
+    ctx.arc(pt.x, pt.y, 3, 0, Math.PI * 2);
+    ctx.fillStyle = pt.color;
+    ctx.globalAlpha = pt.life;
+    ctx.fill();
+    ctx.globalAlpha = 1;
+  });
+
+  const bobY = Math.sin(frame * 0.12) * 3;
+  const dir = mouseX >= pokeX ? 1 : -1;
+  drawPokemon(pokeX, pokeY, p, dir, bobY, walkFrame);
+
+  requestAnimationFrame(loop);
+}
+loop();
+</script>
+</body>
+</html>
