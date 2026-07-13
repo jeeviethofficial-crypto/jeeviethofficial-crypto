@@ -1,5 +1,5 @@
 <h1 align="center">Hi 👋, I'm Jeeveith</h1>
-<h3 align="center">Full-Stack Dev | MERN & NestJS | Sanity.io | SLIIT</h3>
+<h3 align="center">Full-Stack Dev | MERN | Sanity.io | SLIIT</h3>
 
 <p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&pause=1000&color=00C7B7&center=true&vCenter=true&width=500&lines=Building+full-stack+web+applications;MERN+Stack+%7C+NestJS+%7C+PostgreSQL;Turning+ideas+into+scalable+products" alt="Typing SVG" />
