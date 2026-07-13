@@ -1,5 +1,5 @@
 <h1 align="center">Hi 👋, I'm Jeeveith</h1>
-<h3 align="center">Full-Stack Software Engineer | MERN & NestJS | IT Undergraduate at SLIIT</h3>
+<h3 align="center">Full-Stack Dev | MERN & NestJS | Sanity.io | SLIIT</h3>
 
 <p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&pause=1000&color=00C7B7&center=true&vCenter=true&width=500&lines=Building+full-stack+web+applications;MERN+Stack+%7C+NestJS+%7C+PostgreSQL;Turning+ideas+into+scalable+products" alt="Typing SVG" />
@@ -21,7 +21,7 @@
 
 ### 🚀 About Me
 
-- 🎓 Second-year **IT Undergraduate** at **SLIIT** (Sri Lanka Institute of Information Technology)
+- 🎓 3rd-year **IT Undergraduate** at **SLIIT** (Sri Lanka Institute of Information Technology)
 - 💻 Passionate about building efficient, scalable full-stack applications
 - 🌱 Currently deepening my expertise in **NestJS**, **PostgreSQL**, and **Next.js**
 - 🤝 Active in leadership roles across student clubs and open-source communities
