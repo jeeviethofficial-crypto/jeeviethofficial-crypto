@@ -1,4 +1,4 @@
-# 💫 About Me:
+# 💫 Hi there, I'm Jeeveith:
 I am a proactive software engineer combining technical skills in web development with a strong background in leadership and communication. I enjoy building efficient, full-stack applications and collaborating in fast-growing tech environments
 
 
