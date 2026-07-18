@@ -1,0 +1,541 @@
+<svg width="1180" height="610" viewBox="0 0 1180 610" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <clipPath id="outerClip_dark"><rect x="0" y="0" width="1180" height="610" rx="24"/></clipPath>
+    <linearGradient id="bgGrad_dark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#030712"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <radialGradient id="floatGrad1_dark" cx="30%" cy="20%" r="60%">
+      <stop offset="0%" stop-color="#7C3AED" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#7C3AED" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="floatGrad2_dark" cx="80%" cy="80%" r="60%">
+      <stop offset="0%" stop-color="#22D3EE" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#22D3EE" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow_dark" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="noiseF_dark">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" result="n"/>
+      <feColorMatrix in="n" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.025 0"/>
+    </filter>
+  </defs>
+
+  <g clip-path="url(#outerClip_dark)">
+    <rect width="1180" height="610" fill="url(#bgGrad_dark)"/>
+    <rect width="1180" height="610" fill="url(#floatGrad1_dark)">
+      <animateTransform attributeName="transform" type="translate" values="0 0;14 10;0 0" dur="9s" repeatCount="indefinite"/>
+    </rect>
+    <rect width="1180" height="610" fill="url(#floatGrad2_dark)">
+      <animateTransform attributeName="transform" type="translate" values="0 0;-12 -8;0 0" dur="11s" repeatCount="indefinite"/>
+    </rect>
+    <rect width="1180" height="610" filter="url(#noiseF_dark)"/>
+
+    <!-- scanline -->
+    <rect x="0" y="0" width="1180" height="4" fill="#22D3EE" opacity="0.05">
+      <animate attributeName="y" from="0" to="606" dur="6s" repeatCount="indefinite"/>
+    </rect>
+
+    <!-- border shimmer -->
+    <rect x="1" y="1" width="1178" height="608" rx="23" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+    <rect x="1" y="1" width="1178" height="608" rx="23" fill="none" stroke="#22D3EE" stroke-width="1" opacity="0.3">
+      <animate attributeName="opacity" values="0.1;0.4;0.1" dur="4s" repeatCount="indefinite"/>
+    </rect>
+
+    <!-- divider -->
+    <line x1="448" y1="20" x2="448" y2="590" stroke="rgba(255,255,255,0.08)" stroke-width="1.2"/>
+
+    <!-- LEFT PANEL : ASCII portrait -->
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0;0 -2;0 2;0 0" dur="7s" begin="3.0s" repeatCount="indefinite"/>
+      <g filter="url(#glow_dark)" opacity="0.95">
+
+    <clipPath id="rowclip_dark_0">
+      <rect x="54" y="14" width="0" height="14">
+        <animate attributeName="width" from="0" to="340.0" begin="0.0s" dur="0.9525000000000001s" fill="freeze"/>
+      </rect>
+    </clipPath>
+<text x="54" y="25" font-family="Consolas, Monaco, monospace" font-size="11" xml:space="preserve" clip-path="url(#rowclip_dark_0)"><tspan fill="transparent">                     </tspan><tspan fill="#E0F2FE">--...</tspan><tspan fill="transparent">                        </tspan></text>
+
+    <clipPath id="rowclip_dark_1">
+      <rect x="54" y="28" width="0" height="14">
+        <animate attributeName="width" from="0" to="340.0" begin="0.052s" dur="0.9525000000000001s" fill="freeze"/>
+      </rect>
+    </clipPath>
+<text x="54" y="39" font-family="Consolas, Monaco, monospace" font-size="11" xml:space="preserve" clip-path="url(#rowclip_dark_1)"><tspan fill="transparent">                   </tspan><tspan fill="#E0F2FE">-</tspan><tspan fill="#22D3EE">*</tspan><tspan fill="#A78BFA">%%</tspan><tspan fill="#22D3EE">#</tspan><tspan fill="#A78BFA">%</tspan><tspan fill="#22D3EE">*</tspan><tspan fill="#67E8F9">=</tspan><tspan fill="#E0F2FE">.</tspan><tspan fill="transparent">                      </tspan></text>
+
+    <clipPath id="rowclip_dark_2">
+      <rect x="54" y="42" width="0" height="14">
+        <animate attributeName="width" from="0" to="340.0" begin="0.105s" dur="0.9525000000000001s" fill="freeze"/>
+      </rect>
+    </clipPath>
+<text x="54" y="53" font-family="Consolas, Monaco, monospace" font-size="11" xml:space="preserve" clip-path="url(#rowclip_dark_2)"><tspan fill="transparent">                </tspan><tspan fill="#E0F2FE">.:</tspan><tspan fill="#67E8F9">+</tspan><tspan fill="#22D3EE">#</tspan><tspan fill="#A78BFA">%@%%@@</tspan><tspan fill="#22D3EE">#</tspan><tspan fill="#67E8F9">+=</tspan><tspan fill="#E0F2FE">:</tspan><tspan fill="transparent">                    </tspan></text>
+
+    <clipPath id="rowclip_dark_3">
+      <rect x="54" y="56" width="0" height="14">
+        <animate attributeName="width" from="0" to="340.0" begin="0.158s" dur="0.9525000000000001s" fill="freeze"/>
+      </rect>
+    </clipPath>
+<text x="54" y="67" font-family="Consolas, Monaco, monospace" font-size="11" xml:space="preserve" clip-path="url(#rowclip_dark_3)"><tspan fill="transparent">                </tspan><tspan fill="#E0F2FE">-</tspan><tspan fill="#22D3EE">#</tspan><tspan fill="#A78BFA">%@@%@@@@%</tspan><tspan fill="#22D3EE">#*</tspan><tspan fill="#67E8F9">=</tspan><tspan fill="#E0F2FE">:</tspan><tspan fill="transparent">                   </tspan></text>
+
+    <clipPath id="rowclip_dark_4">
+      <rect x="54" y="70" width="0" height="14">
+        <animate attributeName="width" from="0" to="340.0" begin="0.21s" dur="0.9525000000000001s" fill="freeze"/>
+      </rect>
+    </clipPath>
+<text x="54" y="81" font-family="Consolas, Monaco, monospace" font-size="11" xml:space="preserve" clip-path="url(#rowclip_dark_4)"><tspan fill="transparent">               </tspan><tspan fill="#67E8F9">+</tspan><tspan fill="#A78BFA">%%@@@@@@@@@@%%</tspan><tspan fill="#67E8F9">=</tspan><tspan fill="transparent">                   </tspan></text>
+
+    <clipPath id="rowclip_dark_5">
+      <rect x="54" y="84" width="0" height="14">
+        <animate attributeName="width" from="0" to="340.0" begin="0.263s" dur="0.9525000000000001s" fill="freeze"/>
+      </rect>
+    </clipPath>
+<text x="54" y="95" font-family="Consolas, Monaco, monospace" font-size="11" xml:space="preserve" clip-path="url(#rowclip_dark_5)"><tspan fill="transparent">              </tspan><tspan fill="#E0F2FE">:</tspan><tspan fill="#A78BFA">%@@@@@@@@@@@%@@%</tspan><tspan fill="#67E8F9">=</tspan><tspan fill="transparent">                  </tspan></text>
+
+    <clipPath id="rowclip_dark_6">
+      <rect x="54" y="98" width="0" height="14">
+        <animate attributeName="width" from="0" to="340.0" begin="0.315s" dur="0.9525000000000001s" fill="freeze"/>
+      </rect>
+    </clipPath>
+<text x="54" y="109" font-family="Consolas, Monaco, monospace" font-size="11" xml:space="preserve" clip-path="url(#rowclip_dark_6)"><tspan fill="transparent">              </tspan><tspan fill="#67E8F9">=</tspan><tspan fill="#A78BFA">@@@@@@@@@@@@@@@@</tspan><tspan fill="#22D3EE">#</tspan><tspan fill="#E0F2FE">-</tspan><tspan fill="transparent">                 </tspan></text>
+
+    <clipPath id="rowclip_dark_7">
+      <rect x="54" y="112" width="0" height="14">
+        <animate attributeName="width" from="0" to="340.0" begin="0.367s" dur="0.9525000000000001s" fill="freeze"/>
+      </rect>
+    </clipPath>
+<text x="54" y="123" font-family="Consolas, Monaco, monospace" font-size="11" xml:space="preserve" clip-path="url(#rowclip_dark_7)"><tspan fill="transparent">              </tspan><tspan fill="#22D3EE">*</tspan><tspan fill="#A78BFA">@@@@@@@@@@@@@@@@%</tspan><tspan fill="#67E8F9">+</tspan><tspan fill="transparent">                 </tspan></text>
+
+    <clipPath id="rowclip_dark_8">
+      <rect x="54" y="126" width="0" height="14">
+        <animate attributeName="width" from="0" to="340.0" begin="0.42s" dur="0.9525000000000001s" fill="freeze"/>
+      </rect>
+    </clipPath>
+<text x="54" y="137" font-family="Consolas, Monaco, monospace" font-size="11" xml:space="preserve" clip-path="url(#rowclip_dark_8)"><tspan fill="transparent">              </tspan><tspan fill="#67E8F9">=</tspan><tspan fill="#A78BFA">@@@@@@@@@%@%%@@@@</tspan><tspan fill="#67E8F9">=</tspan><tspan fill="transparent">                 </tspan></text>
+
+    <clipPath id="rowclip_dark_9">
+      <rect x="54" y="140" width="0" height="14">
+        <animate attributeName="width" from="0" to="340.0" begin="0.472s" dur="0.9525000000000001s" fill="freeze"/>
+      </rect>
+    </clipPath>
+<text x="54" y="151" font-family="Consolas, Monaco, monospace" font-size="11" xml:space="preserve" clip-path="url(#rowclip_dark_9)"><tspan fill="transparent">               </tspan><tspan fill="#67E8F9">+</tspan><tspan fill="#A78BFA">@@</tspan><tspan fill="#22D3EE">*##**</tspan><tspan fill="#67E8F9">+</tspan><tspan fill="#E0F2FE">-</tspan><tspan fill="#67E8F9">=</tspan><tspan fill="#E0F2FE">--</tspan><tspan fill="#67E8F9">=</tspan><tspan fill="#22D3EE">#</tspan><tspan fill="#A78BFA">%</tspan><tspan fill="#22D3EE">#</tspan><tspan fill="#E0F2FE">.</tspan><tspan fill="transparent">                 </tspan></text>
+
+    <clipPath id="rowclip_dark_10">
+      <rect x="54" y="154" width="0" height="14">
+        <animate attributeName="width" from="0" to="340.0" begin="0.525s" dur="0.9525000000000001s" fill="freeze"/>
+      </rect>
+    </clipPath>
+<text x="54" y="165" font-family="Consolas, Monaco, monospace" font-size="11" xml:space="preserve" clip-path="url(#rowclip_dark_10)"><tspan fill="transparent">               </tspan><tspan fill="#E0F2FE">:</tspan><tspan fill="#A78BFA">@%</tspan><tspan fill="#67E8F9">+++=</tspan><tspan fill="#E0F2FE">-----::</tspan><tspan fill="#22D3EE">*</tspan><tspan fill="#A78BFA">@</tspan><tspan fill="#67E8F9">+</tspan><tspan fill="transparent">                  </tspan></text>
+
+    <clipPath id="rowclip_dark_11">
+      <rect x="54" y="168" width="0" height="14">
+        <animate attributeName="width" from="0" to="340.0" begin="0.578s" dur="0.9525000000000001s" fill="freeze"/>
+      </rect>
+    </clipPath>
+<text x="54" y="179" font-family="Consolas, Monaco, monospace" font-size="11" xml:space="preserve" clip-path="url(#rowclip_dark_11)"><tspan fill="transparent">               </tspan><tspan fill="#E0F2FE">:</tspan><tspan fill="#A78BFA">@</tspan><tspan fill="#22D3EE">#</tspan><tspan fill="#67E8F9">++=</tspan><tspan fill="#E0F2FE">-:::::::</tspan><tspan fill="#67E8F9">+</tspan><tspan fill="#A78BFA">@</tspan><tspan fill="#E0F2FE">-</tspan><tspan fill="transparent">                  </tspan></text>
+
+    <clipPath id="rowclip_dark_12">
+      <rect x="54" y="182" width="0" height="14">
+        <animate attributeName="width" from="0" to="340.0" begin="0.63s" dur="0.9525000000000001s" fill="freeze"/>
+      </rect>
+    </clipPath>
+<text x="54" y="193" font-family="Consolas, Monaco, monospace" font-size="11" xml:space="preserve" clip-path="url(#rowclip_dark_12)"><tspan fill="transparent">               </tspan><tspan fill="#E0F2FE">:</tspan><tspan fill="#A78BFA">@</tspan><tspan fill="#67E8F9">++</tspan><tspan fill="#22D3EE">*</tspan><tspan fill="#67E8F9">+=</tspan><tspan fill="#E0F2FE">-:::::.</tspan><tspan fill="#67E8F9">+</tspan><tspan fill="#A78BFA">@</tspan><tspan fill="#E0F2FE">.</tspan><tspan fill="transparent">                  </tspan></text>
+
+    <clipPath id="rowclip_dark_13">
+      <rect x="54" y="196" width="0" height="14">
+        <animate attributeName="width" from="0" to="340.0" begin="0.682s" dur="0.9525000000000001s" fill="freeze"/>
+      </rect>
+    </clipPath>
+<text x="54" y="207" font-family="Consolas, Monaco, monospace" font-size="11" xml:space="preserve" clip-path="url(#rowclip_dark_13)"><tspan fill="transparent">                </tspan><tspan fill="#A78BFA">%</tspan><tspan fill="#67E8F9">++</tspan><tspan fill="#22D3EE">*#</tspan><tspan fill="#A78BFA">%</tspan><tspan fill="#22D3EE">*</tspan><tspan fill="#E0F2FE">-</tspan><tspan fill="#22D3EE">*</tspan><tspan fill="#A78BFA">%</tspan><tspan fill="#22D3EE">*</tspan><tspan fill="#67E8F9">+</tspan><tspan fill="#E0F2FE">:-</tspan><tspan fill="#22D3EE">#</tspan><tspan fill="transparent">                   </tspan></text>
+
+    <clipPath id="rowclip_dark_14">
+      <rect x="54" y="210" width="0" height="14">
+        <animate attributeName="width" from="0" to="340.0" begin="0.735s" dur="0.9525000000000001s" fill="freeze"/>
+      </rect>
+    </clipPath>
+<text x="54" y="221" font-family="Consolas, Monaco, monospace" font-size="11" xml:space="preserve" clip-path="url(#rowclip_dark_14)"><tspan fill="transparent">               </tspan><tspan fill="#E0F2FE">-</tspan><tspan fill="#A78BFA">%</tspan><tspan fill="#67E8F9">=</tspan><tspan fill="#22D3EE">*###*</tspan><tspan fill="#E0F2FE">:</tspan><tspan fill="#22D3EE">*##*</tspan><tspan fill="#67E8F9">=</tspan><tspan fill="#E0F2FE">-</tspan><tspan fill="#67E8F9">+</tspan><tspan fill="transparent">                   </tspan></text>
+
+    <clipPath id="rowclip_dark_15">
+      <rect x="54" y="224" width="0" height="14">
+        <animate attributeName="width" from="0" to="340.0" begin="0.787s" dur="0.9525000000000001s" fill="freeze"/>
+      </rect>
+    </clipPath>
+<text x="54" y="235" font-family="Consolas, Monaco, monospace" font-size="11" xml:space="preserve" clip-path="url(#rowclip_dark_15)"><tspan fill="transparent">               </tspan><tspan fill="#E0F2FE">:</tspan><tspan fill="#22D3EE">*</tspan><tspan fill="#67E8F9">===++=</tspan><tspan fill="#E0F2FE">.-</tspan><tspan fill="#67E8F9">++</tspan><tspan fill="#E0F2FE">-::</tspan><tspan fill="#67E8F9">+</tspan><tspan fill="#E0F2FE">-</tspan><tspan fill="transparent">                  </tspan></text>
+
+    <clipPath id="rowclip_dark_16">
+      <rect x="54" y="238" width="0" height="14">
+        <animate attributeName="width" from="0" to="340.0" begin="0.84s" dur="0.9525000000000001s" fill="freeze"/>
+      </rect>
+    </clipPath>
+<text x="54" y="249" font-family="Consolas, Monaco, monospace" font-size="11" xml:space="preserve" clip-path="url(#rowclip_dark_16)"><tspan fill="transparent">               </tspan><tspan fill="#E0F2FE">:</tspan><tspan fill="#22D3EE">*</tspan><tspan fill="#67E8F9">=</tspan><tspan fill="#E0F2FE">--:</tspan><tspan fill="#67E8F9">=</tspan><tspan fill="#E0F2FE">-.:::..:</tspan><tspan fill="#67E8F9">=</tspan><tspan fill="#E0F2FE">:</tspan><tspan fill="transparent">                  </tspan></text>
+
+    <clipPath id="rowclip_dark_17">
+      <rect x="54" y="252" width="0" height="14">
+        <animate attributeName="width" from="0" to="340.0" begin="0.892s" dur="0.9525000000000001s" fill="freeze"/>
+      </rect>
+    </clipPath>
+<text x="54" y="263" font-family="Consolas, Monaco, monospace" font-size="11" xml:space="preserve" clip-path="url(#rowclip_dark_17)"><tspan fill="transparent">               </tspan><tspan fill="#E0F2FE">.</tspan><tspan fill="#22D3EE">*</tspan><tspan fill="#67E8F9">=</tspan><tspan fill="#E0F2FE">-::</tspan><tspan fill="#67E8F9">=</tspan><tspan fill="#22D3EE">*</tspan><tspan fill="#67E8F9">+=</tspan><tspan fill="#E0F2FE">:...:</tspan><tspan fill="#67E8F9">=</tspan><tspan fill="transparent">                   </tspan></text>
+
+    <clipPath id="rowclip_dark_18">
+      <rect x="54" y="266" width="0" height="14">
+        <animate attributeName="width" from="0" to="340.0" begin="0.945s" dur="0.9525000000000001s" fill="freeze"/>
+      </rect>
+    </clipPath>
+<text x="54" y="277" font-family="Consolas, Monaco, monospace" font-size="11" xml:space="preserve" clip-path="url(#rowclip_dark_18)"><tspan fill="transparent">               </tspan><tspan fill="#E0F2FE">.</tspan><tspan fill="#67E8F9">+====</tspan><tspan fill="#22D3EE">*#*</tspan><tspan fill="#67E8F9">=</tspan><tspan fill="#E0F2FE">::::::</tspan><tspan fill="transparent">                   </tspan></text>
+
+    <clipPath id="rowclip_dark_19">
+      <rect x="54" y="280" width="0" height="14">
+        <animate attributeName="width" from="0" to="340.0" begin="0.997s" dur="0.9525000000000001s" fill="freeze"/>
+      </rect>
+    </clipPath>
+<text x="54" y="291" font-family="Consolas, Monaco, monospace" font-size="11" xml:space="preserve" clip-path="url(#rowclip_dark_19)"><tspan fill="transparent">                </tspan><tspan fill="#E0F2FE">-</tspan><tspan fill="#67E8F9">+=+</tspan><tspan fill="#A78BFA">%</tspan><tspan fill="#22D3EE">#*</tspan><tspan fill="#67E8F9">+++=</tspan><tspan fill="#E0F2FE">-:-:</tspan><tspan fill="transparent">                   </tspan></text>
+
+    <clipPath id="rowclip_dark_20">
+      <rect x="54" y="294" width="0" height="14">
+        <animate attributeName="width" from="0" to="340.0" begin="1.05s" dur="0.9525000000000001s" fill="freeze"/>
+      </rect>
+    </clipPath>
+<text x="54" y="305" font-family="Consolas, Monaco, monospace" font-size="11" xml:space="preserve" clip-path="url(#rowclip_dark_20)"><tspan fill="transparent">                 </tspan><tspan fill="#67E8F9">==+</tspan><tspan fill="#22D3EE">**</tspan><tspan fill="#67E8F9">=</tspan><tspan fill="#E0F2FE">--</tspan><tspan fill="#22D3EE">#</tspan><tspan fill="#67E8F9">+</tspan><tspan fill="#E0F2FE">--.</tspan><tspan fill="transparent">                    </tspan></text>
+
+    <clipPath id="rowclip_dark_21">
+      <rect x="54" y="308" width="0" height="14">
+        <animate attributeName="width" from="0" to="340.0" begin="1.103s" dur="0.9525000000000001s" fill="freeze"/>
+      </rect>
+    </clipPath>
+<text x="54" y="319" font-family="Consolas, Monaco, monospace" font-size="11" xml:space="preserve" clip-path="url(#rowclip_dark_21)"><tspan fill="transparent">                 </tspan><tspan fill="#E0F2FE">:</tspan><tspan fill="#67E8F9">+==+</tspan><tspan fill="#22D3EE">#*</tspan><tspan fill="#67E8F9">+==</tspan><tspan fill="#E0F2FE">-</tspan><tspan fill="#67E8F9">=</tspan><tspan fill="transparent">                     </tspan></text>
+
+    <clipPath id="rowclip_dark_22">
+      <rect x="54" y="322" width="0" height="14">
+        <animate attributeName="width" from="0" to="340.0" begin="1.155s" dur="0.9525000000000001s" fill="freeze"/>
+      </rect>
+    </clipPath>
+<text x="54" y="333" font-family="Consolas, Monaco, monospace" font-size="11" xml:space="preserve" clip-path="url(#rowclip_dark_22)"><tspan fill="transparent">                  </tspan><tspan fill="#67E8F9">+++===</tspan><tspan fill="#E0F2FE">---</tspan><tspan fill="#67E8F9">==</tspan><tspan fill="transparent">                     </tspan></text>
+
+    <clipPath id="rowclip_dark_23">
+      <rect x="54" y="336" width="0" height="14">
+        <animate attributeName="width" from="0" to="340.0" begin="1.208s" dur="0.9525000000000001s" fill="freeze"/>
+      </rect>
+    </clipPath>
+<text x="54" y="347" font-family="Consolas, Monaco, monospace" font-size="11" xml:space="preserve" clip-path="url(#rowclip_dark_23)"><tspan fill="transparent">                  </tspan><tspan fill="#67E8F9">+</tspan><tspan fill="#A78BFA">%</tspan><tspan fill="#22D3EE">#*</tspan><tspan fill="#67E8F9">+===+</tspan><tspan fill="#22D3EE">*</tspan><tspan fill="#67E8F9">=</tspan><tspan fill="transparent">                     </tspan></text>
+
+    <clipPath id="rowclip_dark_24">
+      <rect x="54" y="350" width="0" height="14">
+        <animate attributeName="width" from="0" to="340.0" begin="1.26s" dur="0.9525000000000001s" fill="freeze"/>
+      </rect>
+    </clipPath>
+<text x="54" y="361" font-family="Consolas, Monaco, monospace" font-size="11" xml:space="preserve" clip-path="url(#rowclip_dark_24)"><tspan fill="transparent">                  </tspan><tspan fill="#67E8F9">=</tspan><tspan fill="#22D3EE">#</tspan><tspan fill="#A78BFA">@@%%%%%</tspan><tspan fill="#22D3EE">*</tspan><tspan fill="#E0F2FE">:-</tspan><tspan fill="transparent">                    </tspan></text>
+
+    <clipPath id="rowclip_dark_25">
+      <rect x="54" y="364" width="0" height="14">
+        <animate attributeName="width" from="0" to="340.0" begin="1.312s" dur="0.9525000000000001s" fill="freeze"/>
+      </rect>
+    </clipPath>
+<text x="54" y="375" font-family="Consolas, Monaco, monospace" font-size="11" xml:space="preserve" clip-path="url(#rowclip_dark_25)"><tspan fill="transparent">                 </tspan><tspan fill="#E0F2FE">.</tspan><tspan fill="#67E8F9">=</tspan><tspan fill="#22D3EE">*#</tspan><tspan fill="#A78BFA">%@@@</tspan><tspan fill="#22D3EE">#*</tspan><tspan fill="#67E8F9">+</tspan><tspan fill="transparent"> </tspan><tspan fill="#E0F2FE">-</tspan><tspan fill="#67E8F9">+</tspan><tspan fill="transparent">                   </tspan></text>
+
+    <clipPath id="rowclip_dark_26">
+      <rect x="54" y="378" width="0" height="14">
+        <animate attributeName="width" from="0" to="340.0" begin="1.365s" dur="0.9525000000000001s" fill="freeze"/>
+      </rect>
+    </clipPath>
+<text x="54" y="389" font-family="Consolas, Monaco, monospace" font-size="11" xml:space="preserve" clip-path="url(#rowclip_dark_26)"><tspan fill="transparent">                </tspan><tspan fill="#E0F2FE">:</tspan><tspan fill="#67E8F9">=</tspan><tspan fill="#E0F2FE">:</tspan><tspan fill="#22D3EE">***#**</tspan><tspan fill="#67E8F9">++</tspan><tspan fill="#E0F2FE">:</tspan><tspan fill="transparent"> </tspan><tspan fill="#E0F2FE">:</tspan><tspan fill="#A78BFA">%</tspan><tspan fill="#67E8F9">+</tspan><tspan fill="transparent">                  </tspan></text>
+
+    <clipPath id="rowclip_dark_27">
+      <rect x="54" y="392" width="0" height="14">
+        <animate attributeName="width" from="0" to="340.0" begin="1.417s" dur="0.9525000000000001s" fill="freeze"/>
+      </rect>
+    </clipPath>
+<text x="54" y="403" font-family="Consolas, Monaco, monospace" font-size="11" xml:space="preserve" clip-path="url(#rowclip_dark_27)"><tspan fill="transparent">               </tspan><tspan fill="#E0F2FE">:</tspan><tspan fill="#A78BFA">%</tspan><tspan fill="#67E8F9">=</tspan><tspan fill="transparent"> </tspan><tspan fill="#E0F2FE">:</tspan><tspan fill="#67E8F9">++</tspan><tspan fill="#22D3EE">*</tspan><tspan fill="#67E8F9">++=</tspan><tspan fill="#E0F2FE">.</tspan><tspan fill="transparent">  </tspan><tspan fill="#67E8F9">=</tspan><tspan fill="#A78BFA">@</tspan><tspan fill="#22D3EE">##</tspan><tspan fill="#67E8F9">+</tspan><tspan fill="#E0F2FE">:</tspan><tspan fill="transparent">               </tspan></text>
+
+    <clipPath id="rowclip_dark_28">
+      <rect x="54" y="406" width="0" height="14">
+        <animate attributeName="width" from="0" to="340.0" begin="1.47s" dur="0.9525000000000001s" fill="freeze"/>
+      </rect>
+    </clipPath>
+<text x="54" y="417" font-family="Consolas, Monaco, monospace" font-size="11" xml:space="preserve" clip-path="url(#rowclip_dark_28)"><tspan fill="transparent">             </tspan><tspan fill="#E0F2FE">.</tspan><tspan fill="#22D3EE">*</tspan><tspan fill="#A78BFA">%@</tspan><tspan fill="#67E8F9">=</tspan><tspan fill="transparent">  </tspan><tspan fill="#E0F2FE">.</tspan><tspan fill="#67E8F9">+++=</tspan><tspan fill="#E0F2FE">.</tspan><tspan fill="transparent">   </tspan><tspan fill="#22D3EE">*</tspan><tspan fill="#A78BFA">%%%%%</tspan><tspan fill="#22D3EE">#</tspan><tspan fill="#67E8F9">=</tspan><tspan fill="#E0F2FE">.</tspan><tspan fill="transparent">            </tspan></text>
+
+    <clipPath id="rowclip_dark_29">
+      <rect x="54" y="420" width="0" height="14">
+        <animate attributeName="width" from="0" to="340.0" begin="1.522s" dur="0.9525000000000001s" fill="freeze"/>
+      </rect>
+    </clipPath>
+<text x="54" y="431" font-family="Consolas, Monaco, monospace" font-size="11" xml:space="preserve" clip-path="url(#rowclip_dark_29)"><tspan fill="transparent">            </tspan><tspan fill="#67E8F9">+</tspan><tspan fill="#A78BFA">%%%@</tspan><tspan fill="#67E8F9">=</tspan><tspan fill="transparent">    </tspan><tspan fill="#E0F2FE">--</tspan><tspan fill="transparent">     </tspan><tspan fill="#A78BFA">%%%%%%%%%</tspan><tspan fill="#22D3EE">*</tspan><tspan fill="#E0F2FE">-.</tspan><tspan fill="transparent">         </tspan></text>
+
+    <clipPath id="rowclip_dark_30">
+      <rect x="54" y="434" width="0" height="14">
+        <animate attributeName="width" from="0" to="340.0" begin="1.575s" dur="0.9525000000000001s" fill="freeze"/>
+      </rect>
+    </clipPath>
+<text x="54" y="445" font-family="Consolas, Monaco, monospace" font-size="11" xml:space="preserve" clip-path="url(#rowclip_dark_30)"><tspan fill="transparent">         </tspan><tspan fill="#E0F2FE">.</tspan><tspan fill="#67E8F9">=</tspan><tspan fill="#A78BFA">%%%%@@</tspan><tspan fill="#67E8F9">=</tspan><tspan fill="transparent">   </tspan><tspan fill="#E0F2FE">-</tspan><tspan fill="#22D3EE">*#</tspan><tspan fill="#E0F2FE">.</tspan><tspan fill="transparent">   </tspan><tspan fill="#E0F2FE">.</tspan><tspan fill="#A78BFA">%%%@@@%%%%%%</tspan><tspan fill="#22D3EE">#</tspan><tspan fill="#67E8F9">+</tspan><tspan fill="#E0F2FE">.</tspan><tspan fill="transparent">      </tspan></text>
+
+    <clipPath id="rowclip_dark_31">
+      <rect x="54" y="448" width="0" height="14">
+        <animate attributeName="width" from="0" to="340.0" begin="1.627s" dur="0.9525000000000001s" fill="freeze"/>
+      </rect>
+    </clipPath>
+<text x="54" y="459" font-family="Consolas, Monaco, monospace" font-size="11" xml:space="preserve" clip-path="url(#rowclip_dark_31)"><tspan fill="transparent">      </tspan><tspan fill="#E0F2FE">.</tspan><tspan fill="#67E8F9">=</tspan><tspan fill="#22D3EE">#</tspan><tspan fill="#A78BFA">%%%%@@@@</tspan><tspan fill="#67E8F9">=</tspan><tspan fill="transparent">  </tspan><tspan fill="#E0F2FE">-</tspan><tspan fill="#A78BFA">@@%%</tspan><tspan fill="#E0F2FE">.</tspan><tspan fill="transparent">  </tspan><tspan fill="#E0F2FE">-</tspan><tspan fill="#A78BFA">@%%%%%%%%%%%%%</tspan><tspan fill="#22D3EE">#</tspan><tspan fill="transparent">      </tspan></text>
+
+    <clipPath id="rowclip_dark_32">
+      <rect x="54" y="462" width="0" height="14">
+        <animate attributeName="width" from="0" to="340.0" begin="1.68s" dur="0.9525000000000001s" fill="freeze"/>
+      </rect>
+    </clipPath>
+<text x="54" y="473" font-family="Consolas, Monaco, monospace" font-size="11" xml:space="preserve" clip-path="url(#rowclip_dark_32)"><tspan fill="transparent">     </tspan><tspan fill="#22D3EE">*</tspan><tspan fill="#A78BFA">%%%@@@@@@@@</tspan><tspan fill="#E0F2FE">-</tspan><tspan fill="transparent">  </tspan><tspan fill="#67E8F9">=</tspan><tspan fill="#A78BFA">%@@</tspan><tspan fill="#22D3EE">#</tspan><tspan fill="#E0F2FE">-</tspan><tspan fill="transparent">  </tspan><tspan fill="#67E8F9">=</tspan><tspan fill="#A78BFA">@%%%%@@%%%%%%%%</tspan><tspan fill="#E0F2FE">.</tspan><tspan fill="transparent">     </tspan></text>
+
+    <clipPath id="rowclip_dark_33">
+      <rect x="54" y="476" width="0" height="14">
+        <animate attributeName="width" from="0" to="340.0" begin="1.732s" dur="0.9525000000000001s" fill="freeze"/>
+      </rect>
+    </clipPath>
+<text x="54" y="487" font-family="Consolas, Monaco, monospace" font-size="11" xml:space="preserve" clip-path="url(#rowclip_dark_33)"><tspan fill="transparent">    </tspan><tspan fill="#E0F2FE">-</tspan><tspan fill="#A78BFA">@%@@@@@@@@@@</tspan><tspan fill="#E0F2FE">.</tspan><tspan fill="transparent">   </tspan><tspan fill="#E0F2FE">-</tspan><tspan fill="#A78BFA">@%</tspan><tspan fill="#E0F2FE">.</tspan><tspan fill="transparent">   </tspan><tspan fill="#67E8F9">+</tspan><tspan fill="#A78BFA">@%%%%%@@%%@%@%%</tspan><tspan fill="#E0F2FE">:</tspan><tspan fill="transparent">     </tspan></text>
+
+    <clipPath id="rowclip_dark_34">
+      <rect x="54" y="490" width="0" height="14">
+        <animate attributeName="width" from="0" to="340.0" begin="1.785s" dur="0.9525000000000001s" fill="freeze"/>
+      </rect>
+    </clipPath>
+<text x="54" y="501" font-family="Consolas, Monaco, monospace" font-size="11" xml:space="preserve" clip-path="url(#rowclip_dark_34)"><tspan fill="transparent">    </tspan><tspan fill="#60A5FA">-++++++++++++.</tspan><tspan fill="transparent">   </tspan><tspan fill="#60A5FA">:+=</tspan><tspan fill="transparent">    </tspan><tspan fill="#60A5FA">=+++++++++++++++-</tspan><tspan fill="transparent">     </tspan></text>
+
+    <clipPath id="rowclip_dark_35">
+      <rect x="54" y="504" width="0" height="14">
+        <animate attributeName="width" from="0" to="340.0" begin="1.837s" dur="0.9525000000000001s" fill="freeze"/>
+      </rect>
+    </clipPath>
+<text x="54" y="515" font-family="Consolas, Monaco, monospace" font-size="11" xml:space="preserve" clip-path="url(#rowclip_dark_35)"><tspan fill="transparent">    </tspan><tspan fill="#60A5FA">=++++++++++++.</tspan><tspan fill="transparent">   </tspan><tspan fill="#60A5FA">=++.</tspan><tspan fill="transparent">   </tspan><tspan fill="#60A5FA">=+++++++++++++++=</tspan><tspan fill="transparent">     </tspan></text>
+
+    <clipPath id="rowclip_dark_36">
+      <rect x="54" y="518" width="0" height="14">
+        <animate attributeName="width" from="0" to="340.0" begin="1.89s" dur="0.9525000000000001s" fill="freeze"/>
+      </rect>
+    </clipPath>
+<text x="54" y="529" font-family="Consolas, Monaco, monospace" font-size="11" xml:space="preserve" clip-path="url(#rowclip_dark_36)"><tspan fill="transparent">    </tspan><tspan fill="#60A5FA">+++++++++++++.</tspan><tspan fill="transparent">  </tspan><tspan fill="#60A5FA">.+++:</tspan><tspan fill="transparent">  </tspan><tspan fill="#60A5FA">.+++++++++++++++++:</tspan><tspan fill="transparent">    </tspan></text>
+
+    <clipPath id="rowclip_dark_37">
+      <rect x="54" y="532" width="0" height="14">
+        <animate attributeName="width" from="0" to="340.0" begin="1.942s" dur="0.9525000000000001s" fill="freeze"/>
+      </rect>
+    </clipPath>
+<text x="54" y="543" font-family="Consolas, Monaco, monospace" font-size="11" xml:space="preserve" clip-path="url(#rowclip_dark_37)"><tspan fill="transparent">   </tspan><tspan fill="#60A5FA">.+++++++++++++.</tspan><tspan fill="transparent">  </tspan><tspan fill="#60A5FA">.+++-</tspan><tspan fill="transparent">  </tspan><tspan fill="#60A5FA">:+++++++++++++++++=</tspan><tspan fill="transparent">    </tspan></text>
+
+    <clipPath id="rowclip_dark_38">
+      <rect x="54" y="546" width="0" height="14">
+        <animate attributeName="width" from="0" to="340.0" begin="1.995s" dur="0.9525000000000001s" fill="freeze"/>
+      </rect>
+    </clipPath>
+<text x="54" y="557" font-family="Consolas, Monaco, monospace" font-size="11" xml:space="preserve" clip-path="url(#rowclip_dark_38)"><tspan fill="transparent">   </tspan><tspan fill="#60A5FA">:+++++++++++++.</tspan><tspan fill="transparent">  </tspan><tspan fill="#60A5FA">:+++-</tspan><tspan fill="transparent">  </tspan><tspan fill="#60A5FA">-++++++++++++++++++.</tspan><tspan fill="transparent">   </tspan></text>
+
+    <clipPath id="rowclip_dark_39">
+      <rect x="54" y="560" width="0" height="14">
+        <animate attributeName="width" from="0" to="340.0" begin="2.047s" dur="0.9525000000000001s" fill="freeze"/>
+      </rect>
+    </clipPath>
+<text x="54" y="571" font-family="Consolas, Monaco, monospace" font-size="11" xml:space="preserve" clip-path="url(#rowclip_dark_39)"><tspan fill="transparent">   </tspan><tspan fill="#60A5FA">-+++++++++++++.</tspan><tspan fill="transparent">  </tspan><tspan fill="#60A5FA">-+++-</tspan><tspan fill="transparent">  </tspan><tspan fill="#60A5FA">=++++++++++++++++++-</tspan><tspan fill="transparent">   </tspan></text>
+      </g>
+    </g>
+    <!-- loading cursor during reveal -->
+    <rect x="54" y="15" width="7" height="12" fill="#22D3EE">
+      <animate attributeName="opacity" values="1;0;1;0" dur="0.6s" repeatCount="indefinite"/>
+      <animate attributeName="y" from="15" to="561" begin="0s" dur="3.0s" fill="freeze"/>
+      <set attributeName="opacity" to="0" begin="3.0s"/>
+    </rect>
+
+    <!-- RIGHT PANEL -->
+    <text x="500" y="78" font-family="Consolas, Monaco, monospace" font-size="28" font-weight="700" fill="#F8FAFC">Hi I'm <tspan fill="#22D3EE">JEEVEITH</tspan></text>
+    <text x="500" y="102" font-family="Consolas, Monaco, monospace" font-size="12.5" fill="#94A3B8">Information Technology Undergraduate</text>
+    <text x="500" y="126" font-family="Consolas, Monaco, monospace" font-size="15" fill="#94A3B8">$ whoami --professional</text>
+
+    <rect x="490" y="158" width="560" height="46" rx="8" fill="#0F172A" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+
+    <clipPath id="roleclip_dark_0">
+      <rect x="500" y="166.5" width="0" height="27.5">
+        <animate attributeName="width" values="0;0;315.90;315.90;0;0" keyTimes="0.00000;0.00010;0.07742;0.15484;0.18710;0.20000" dur="15.5s" repeatCount="indefinite"/>
+      </rect>
+    </clipPath>
+<text x="500" y="186" font-family="Consolas, Monaco, monospace" font-size="19.5" font-weight="600" fill="#22D3EE" clip-path="url(#roleclip_dark_0)">Full Stack Developer (MERN)</text>
+
+    <clipPath id="roleclip_dark_1">
+      <rect x="500" y="166.5" width="0" height="27.5">
+        <animate attributeName="width" values="0;0;280.80;280.80;0;0" keyTimes="0.00000;0.20000;0.27742;0.35484;0.38710;0.40000" dur="15.5s" repeatCount="indefinite"/>
+      </rect>
+    </clipPath>
+<text x="500" y="186" font-family="Consolas, Monaco, monospace" font-size="19.5" font-weight="600" fill="#22D3EE" clip-path="url(#roleclip_dark_1)">Software Engineer Intern</text>
+
+    <clipPath id="roleclip_dark_2">
+      <rect x="500" y="166.5" width="0" height="27.5">
+        <animate attributeName="width" values="0;0;269.10;269.10;0;0" keyTimes="0.00000;0.40000;0.47742;0.55484;0.58710;0.60000" dur="15.5s" repeatCount="indefinite"/>
+      </rect>
+    </clipPath>
+<text x="500" y="186" font-family="Consolas, Monaco, monospace" font-size="19.5" font-weight="600" fill="#22D3EE" clip-path="url(#roleclip_dark_2)">Java &amp; Python Developer</text>
+
+    <clipPath id="roleclip_dark_3">
+      <rect x="500" y="166.5" width="0" height="27.5">
+        <animate attributeName="width" values="0;0;280.80;280.80;0;0" keyTimes="0.00000;0.60000;0.67742;0.75484;0.78710;0.80000" dur="15.5s" repeatCount="indefinite"/>
+      </rect>
+    </clipPath>
+<text x="500" y="186" font-family="Consolas, Monaco, monospace" font-size="19.5" font-weight="600" fill="#22D3EE" clip-path="url(#roleclip_dark_3)">React &amp; Spring Developer</text>
+
+    <clipPath id="roleclip_dark_4">
+      <rect x="500" y="166.5" width="0" height="27.5">
+        <animate attributeName="width" values="0;0;280.80;280.80;0;0" keyTimes="0.00000;0.80000;0.87742;0.95484;0.98710;1.00000" dur="15.5s" repeatCount="indefinite"/>
+      </rect>
+    </clipPath>
+<text x="500" y="186" font-family="Consolas, Monaco, monospace" font-size="19.5" font-weight="600" fill="#22D3EE" clip-path="url(#roleclip_dark_4)">IT Undergraduate @ SLIIT</text>
+    <g>
+      <rect y="168.5" width="2.4" height="19.5" fill="#22D3EE">
+        <animate attributeName="x" values="500;500.00;815.90;815.90;500.00;500.00;780.80;780.80;500.00;500.00;769.10;769.10;500.00;500.00;780.80;780.80;500.00;500.00;780.80;780.80;500.00;500" keyTimes="0.00000;0.00010;0.07742;0.15484;0.20000;0.20010;0.27742;0.35484;0.40000;0.40010;0.47742;0.55484;0.60000;0.60000;0.67742;0.75484;0.80000;0.80000;0.87742;0.95484;1.00000;1.00000" dur="15.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0;1;0;1" dur="0.9s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+
+
+    <g opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="3.4s" dur="0.5s" fill="freeze"/>
+      <text x="500" y="240" font-family="Consolas, Monaco, monospace" font-size="12.5" font-weight="700" fill="#94A3B8" letter-spacing="1">LOCATION</text>
+      <text x="660" y="240" font-family="Consolas, Monaco, monospace" font-size="12.5" fill="#F8FAFC">Sri Lanka</text>
+    </g>
+
+    <g opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="3.55s" dur="0.5s" fill="freeze"/>
+      <text x="500" y="266" font-family="Consolas, Monaco, monospace" font-size="12.5" font-weight="700" fill="#94A3B8" letter-spacing="1">EDUCATION</text>
+      <text x="660" y="266" font-family="Consolas, Monaco, monospace" font-size="12.5" fill="#F8FAFC">BSc (Hons) IT, SLIIT — 2nd Year</text>
+    </g>
+
+    <g opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="3.6999999999999997s" dur="0.5s" fill="freeze"/>
+      <text x="500" y="292" font-family="Consolas, Monaco, monospace" font-size="12.5" font-weight="700" fill="#94A3B8" letter-spacing="1">CURRENT ROLE</text>
+      <text x="660" y="292" font-family="Consolas, Monaco, monospace" font-size="12.5" fill="#F8FAFC">SE Intern @ Edgrow Tech</text>
+    </g>
+
+    <g opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="3.8499999999999996s" dur="0.5s" fill="freeze"/>
+      <text x="500" y="318" font-family="Consolas, Monaco, monospace" font-size="12.5" font-weight="700" fill="#94A3B8" letter-spacing="1">GITHUB</text>
+      <text x="660" y="318" font-family="Consolas, Monaco, monospace" font-size="12.5" fill="#F8FAFC">github.com/jeeviethofficial-crypto</text>
+    </g>
+
+    <g opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="4.0s" dur="0.5s" fill="freeze"/>
+      <text x="500" y="344" font-family="Consolas, Monaco, monospace" font-size="12.5" font-weight="700" fill="#94A3B8" letter-spacing="1">EMAIL</text>
+      <text x="660" y="344" font-family="Consolas, Monaco, monospace" font-size="12.5" fill="#F8FAFC">jeevieth.official@gmail.com</text>
+    </g>
+
+    <line x1="500" y1="376" x2="1060" y2="376" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+    <text x="500" y="368" font-family="Consolas, Monaco, monospace" font-size="11" font-weight="700" fill="#94A3B8" letter-spacing="1" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="3.6s" dur="0.4s" fill="freeze"/>
+      SKILLS
+    </text>
+
+    <g opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="3.7s" dur="0.4s" fill="freeze"/>
+      <rect x="500" y="400" width="59.0" height="24" rx="12" fill="#0F172A" stroke="#22D3EE" stroke-opacity="0.5" stroke-width="1">
+        <animate attributeName="stroke-opacity" values="0.35;0.7;0.35" dur="3s" begin="3.7s" repeatCount="indefinite"/>
+      </rect>
+      <text x="529.5" y="416" text-anchor="middle" font-family="Consolas, Monaco, monospace" font-size="11.5" fill="#F8FAFC">React</text>
+    </g>
+
+    <g opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="3.8200000000000003s" dur="0.4s" fill="freeze"/>
+      <rect x="569.0" y="400" width="72.2" height="24" rx="12" fill="#0F172A" stroke="#22D3EE" stroke-opacity="0.5" stroke-width="1">
+        <animate attributeName="stroke-opacity" values="0.35;0.7;0.35" dur="3s" begin="3.8200000000000003s" repeatCount="indefinite"/>
+      </rect>
+      <text x="605.1" y="416" text-anchor="middle" font-family="Consolas, Monaco, monospace" font-size="11.5" fill="#F8FAFC">Node.js</text>
+    </g>
+
+    <g opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="3.9400000000000004s" dur="0.4s" fill="freeze"/>
+      <rect x="651.2" y="400" width="72.2" height="24" rx="12" fill="#0F172A" stroke="#22D3EE" stroke-opacity="0.5" stroke-width="1">
+        <animate attributeName="stroke-opacity" values="0.35;0.7;0.35" dur="3s" begin="3.9400000000000004s" repeatCount="indefinite"/>
+      </rect>
+      <text x="687.3" y="416" text-anchor="middle" font-family="Consolas, Monaco, monospace" font-size="11.5" fill="#F8FAFC">Express</text>
+    </g>
+
+    <g opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="4.0600000000000005s" dur="0.4s" fill="freeze"/>
+      <rect x="733.4000000000001" y="400" width="72.2" height="24" rx="12" fill="#0F172A" stroke="#22D3EE" stroke-opacity="0.5" stroke-width="1">
+        <animate attributeName="stroke-opacity" values="0.35;0.7;0.35" dur="3s" begin="4.0600000000000005s" repeatCount="indefinite"/>
+      </rect>
+      <text x="769.5" y="416" text-anchor="middle" font-family="Consolas, Monaco, monospace" font-size="11.5" fill="#F8FAFC">MongoDB</text>
+    </g>
+
+    <g opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="4.18s" dur="0.4s" fill="freeze"/>
+      <rect x="815.6000000000001" y="400" width="65.6" height="24" rx="12" fill="#0F172A" stroke="#22D3EE" stroke-opacity="0.5" stroke-width="1">
+        <animate attributeName="stroke-opacity" values="0.35;0.7;0.35" dur="3s" begin="4.18s" repeatCount="indefinite"/>
+      </rect>
+      <text x="848.4" y="416" text-anchor="middle" font-family="Consolas, Monaco, monospace" font-size="11.5" fill="#F8FAFC">Spring</text>
+    </g>
+
+    <g opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="4.3s" dur="0.4s" fill="freeze"/>
+      <rect x="891.2000000000002" y="400" width="52.4" height="24" rx="12" fill="#0F172A" stroke="#22D3EE" stroke-opacity="0.5" stroke-width="1">
+        <animate attributeName="stroke-opacity" values="0.35;0.7;0.35" dur="3s" begin="4.3s" repeatCount="indefinite"/>
+      </rect>
+      <text x="917.4" y="416" text-anchor="middle" font-family="Consolas, Monaco, monospace" font-size="11.5" fill="#F8FAFC">Java</text>
+    </g>
+
+    <g opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="4.42s" dur="0.4s" fill="freeze"/>
+      <rect x="953.6000000000001" y="400" width="65.6" height="24" rx="12" fill="#0F172A" stroke="#22D3EE" stroke-opacity="0.5" stroke-width="1">
+        <animate attributeName="stroke-opacity" values="0.35;0.7;0.35" dur="3s" begin="4.42s" repeatCount="indefinite"/>
+      </rect>
+      <text x="986.4" y="416" text-anchor="middle" font-family="Consolas, Monaco, monospace" font-size="11.5" fill="#F8FAFC">Python</text>
+    </g>
+
+    <g opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="4.54s" dur="0.4s" fill="freeze"/>
+      <rect x="1029.2" y="400" width="45.8" height="24" rx="12" fill="#0F172A" stroke="#22D3EE" stroke-opacity="0.5" stroke-width="1">
+        <animate attributeName="stroke-opacity" values="0.35;0.7;0.35" dur="3s" begin="4.54s" repeatCount="indefinite"/>
+      </rect>
+      <text x="1052.1" y="416" text-anchor="middle" font-family="Consolas, Monaco, monospace" font-size="11.5" fill="#F8FAFC">SQL</text>
+    </g>
+
+    <g opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="4.66s" dur="0.4s" fill="freeze"/>
+      <rect x="500" y="434" width="92.0" height="24" rx="12" fill="#0F172A" stroke="#22D3EE" stroke-opacity="0.5" stroke-width="1">
+        <animate attributeName="stroke-opacity" values="0.35;0.7;0.35" dur="3s" begin="4.66s" repeatCount="indefinite"/>
+      </rect>
+      <text x="546.0" y="450" text-anchor="middle" font-family="Consolas, Monaco, monospace" font-size="11.5" fill="#F8FAFC">PostgreSQL</text>
+    </g>
+
+    <g opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="4.78s" dur="0.4s" fill="freeze"/>
+      <rect x="602.0" y="434" width="105.2" height="24" rx="12" fill="#0F172A" stroke="#22D3EE" stroke-opacity="0.5" stroke-width="1">
+        <animate attributeName="stroke-opacity" values="0.35;0.7;0.35" dur="3s" begin="4.78s" repeatCount="indefinite"/>
+      </rect>
+      <text x="654.6" y="450" text-anchor="middle" font-family="Consolas, Monaco, monospace" font-size="11.5" fill="#F8FAFC">Tailwind CSS</text>
+    </g>
+
+    <g opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="4.9s" dur="0.4s" fill="freeze"/>
+      <rect x="717.2" y="434" width="59.0" height="24" rx="12" fill="#0F172A" stroke="#22D3EE" stroke-opacity="0.5" stroke-width="1">
+        <animate attributeName="stroke-opacity" values="0.35;0.7;0.35" dur="3s" begin="4.9s" repeatCount="indefinite"/>
+      </rect>
+      <text x="746.7" y="450" text-anchor="middle" font-family="Consolas, Monaco, monospace" font-size="11.5" fill="#F8FAFC">Figma</text>
+    </g>
+
+
+    <g transform="translate(500,486)" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="4.3s" dur="0.4s" fill="freeze"/>
+      <path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.23.68-.5v-1.75c-2.78.62-3.37-1.37-3.37-1.37-.46-1.2-1.11-1.52-1.11-1.52-.9-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.9 1.57 2.34 1.12 2.91.85.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.9-1.33 2.75-1.05 2.75-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9v2.82c0 .27.18.6.69.5A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z" transform="scale(0.68)" fill="#94A3B8"/>
+      <text x="24" y="12" font-family="Consolas, Monaco, monospace" font-size="11.5" fill="#94A3B8">GitHub</text>
+    </g>
+
+    <g transform="translate(640,486)" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="4.45s" dur="0.4s" fill="freeze"/>
+      <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.5 4.78 5.76V21h-4v-5.7c0-1.36-.02-3.1-1.9-3.1-1.9 0-2.2 1.45-2.2 3v5.8H9z" transform="scale(0.68)" fill="#94A3B8"/>
+      <text x="24" y="12" font-family="Consolas, Monaco, monospace" font-size="11.5" fill="#94A3B8">LinkedIn</text>
+    </g>
+
+    <g transform="translate(780,486)" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="4.6s" dur="0.4s" fill="freeze"/>
+      <path d="M18.9 3H21l-6.6 7.55L22 21h-6.4l-4.9-6.4L4.9 21H2.8l7-8L1.6 3h6.5l4.4 5.85z" transform="scale(0.68)" fill="#94A3B8"/>
+      <text x="24" y="12" font-family="Consolas, Monaco, monospace" font-size="11.5" fill="#94A3B8">X</text>
+    </g>
+
+    <g transform="translate(920,486)" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="4.75s" dur="0.4s" fill="freeze"/>
+      <path d="M4 7h16v12H4zM4 7l3-4h10l3 4" transform="scale(0.68)" fill="#94A3B8"/>
+      <text x="24" y="12" font-family="Consolas, Monaco, monospace" font-size="11.5" fill="#94A3B8">Portfolio</text>
+    </g>
+  </g>
+</svg>
